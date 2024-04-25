@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TestPage from "./testPage";
+import Header from "@/components/header";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <p>
           <Link href="/about">Go To The About Page</Link>
         </p>
+        <Header />
         <TestPage />
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
