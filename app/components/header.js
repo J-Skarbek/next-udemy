@@ -1,13 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-// import logoImg from '@/public/vercel.svg';
 
 export default function Header() {
   return (
     <header className="flex justify-center items-center align-center p-8">
       <div className="logo-container">
         <Link href="/">
-          {/* <img src={logoImg.src} alt="Our Logo"/> */}
           <Image 
             src="/vercel.svg"
             alt="Vercel Logo"
