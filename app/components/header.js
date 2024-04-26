@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="flex justify-center items-center align-center">
+    <header className="flex justify-center items-center align-center p-8">
       <div className="logo-container">
         <Link href="/">
           {/* <img src={logoImg.src} alt="Our Logo"/> */}
