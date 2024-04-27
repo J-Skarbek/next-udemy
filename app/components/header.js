@@ -26,21 +26,24 @@ export default function Header() {
           <li>
             <Link 
               href="/meals" 
-              className={ path.startsWith('/meals') ? 'decoration-solid text-red-900 hover:text-red-400' : 'hover:text-red-400' }>
+              className={`${path.startsWith('/meals') ? 'decoration-solid text-red-900 hover:text-red-400' : undefined} hover:text-red-400`}
+            >
               Meals
             </Link>
           </li>
           <li>
             <Link 
               href="/community" 
-              className={ path.startsWith('/community') ? 'decoration-solid text-red-900 hover:text-red-400' : 'hover:text-red-400' }>
+              className={`${path.startsWith('/community') ? 'decoration-solid text-red-900 hover:text-red-400' : undefined} hover:text-red-400`}
+            >
               Community
             </Link>
           </li>
           <li>
             <Link 
               href="/about" 
-              className={ path.startsWith('/about') ? 'decoration-solid text-red-900 hover:text-red-400' : 'hover:text-red-400' }>
+              className={`${path.startsWith('/about') ? 'decoration-solid text-red-900 hover:text-red-400' : undefined} hover:text-red-400`}
+            >
               About
             </Link>
           </li>
