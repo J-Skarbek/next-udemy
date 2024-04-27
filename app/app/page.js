@@ -1,4 +1,5 @@
 import Link from "next/link"
+import ImageSlideshow from "@/components/images/image-slideshow";
 
 export default function Home() {
     
@@ -6,7 +7,7 @@ export default function Home() {
     <>
       <header>
         <div className="slideshow">
-
+          <ImageSlideshow />
         </div>
         <div>
           <div className="hero flex flex-col justify-center align-center items-center gap-4">
