@@ -6,9 +6,7 @@ export default function Home() {
   return (
     <>
       <header>
-        <div className="slideshow">
-        </div>
-        <div>
+        <div className="flex flex-col">
           <div className="hero flex flex-col justify-center align-center items-center gap-4">
             <h1 className="text-5xl font-bold">Next Level Foot for Next Level Foodies</h1>
             <p className="text-3xl font-semibold">Taste and share food from all over the world.</p>
@@ -17,7 +15,7 @@ export default function Home() {
             <Link href="/community">Join the Community</Link>
             <Link href="/meals">Explore Meals</Link>
           </div>
-          <div>
+          <div className="slideshow h-96">
             <ImageSlideshow />
           </div>
 
