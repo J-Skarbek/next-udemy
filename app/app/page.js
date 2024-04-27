@@ -7,7 +7,6 @@ export default function Home() {
     <>
       <header>
         <div className="slideshow">
-          <ImageSlideshow />
         </div>
         <div>
           <div className="hero flex flex-col justify-center align-center items-center gap-4">
@@ -18,6 +17,10 @@ export default function Home() {
             <Link href="/community">Join the Community</Link>
             <Link href="/meals">Explore Meals</Link>
           </div>
+          <div>
+            <ImageSlideshow />
+          </div>
+
         </div>       
       </header>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
