@@ -6,7 +6,7 @@ export default function Community() {
       <header>
         <div className="flex flex-col">
           <div className="hero flex flex-col justify-center align-center items-center gap-4">
-            <h1 className="text-5xl font-bold">Here's the community page!</h1>
+            <h1 className="text-5xl font-bold">Here&apos;s the community page!</h1>
             <p className="text-3xl font-semibold">We gather across the globe...</p>
           </div>
           <div className="cta-section text-2xl font-semibold flex gap-4 my-4 justify-center align-center items-center">
