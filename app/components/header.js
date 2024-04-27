@@ -1,11 +1,8 @@
-'use client';
-
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import NavLink from "./navLink";
 
 export default function Header() {
-  const path = usePathname();
 
   return (
     <header className="flex justify-center items-center align-center p-8">
@@ -24,28 +21,13 @@ export default function Header() {
       <nav className="main-nav flex items-center align center justify-between mx-8">
         <ul className="flex items-center align center justify-between gap-8">
           <li>
-            <Link 
-              href="/meals" 
-              className={`${path.startsWith('/meals') ? 'decoration-solid text-red-900 hover:text-red-400' : undefined} hover:text-red-400`}
-            >
-              Meals
-            </Link>
+            <NavLink href='/meals'>Meals</NavLink>
           </li>
           <li>
-            <Link 
-              href="/community" 
-              className={`${path.startsWith('/community') ? 'decoration-solid text-red-900 hover:text-red-400' : undefined} hover:text-red-400`}
-            >
-              Community
-            </Link>
+            <NavLink href='/community'>Community</NavLink>
           </li>
           <li>
-            <Link 
-              href="/about" 
-              className={`${path.startsWith('/about') ? 'decoration-solid text-red-900 hover:text-red-400' : undefined} hover:text-red-400`}
-            >
-              About
-            </Link>
+            <NavLink href='/about'>About</NavLink>
           </li>
         </ul>
       </nav>
