@@ -1,4 +1,4 @@
-const sql = require('better-sqlite3');
+import sql from 'better-sqlite3';
 
 const db = sql('meals.db');
 
@@ -10,5 +10,5 @@ export async function getMeals() {
 
   //Abritrary delay...
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  db.prepare('SELECT * FROM meals').all();
+  return db.prepare('SELECT * FROM meals').all();
 }
