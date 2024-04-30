@@ -5,8 +5,8 @@ export default function MealItem({ title, slug, image, summary, creator }) {
   return (
     <article className="flex flex-col">
       <header>
-        <div className="meal-coverImg">
-          <Image src={image} alt={title} fill />
+        <div className="meal-coverImg relative w-100 h-52">
+          <Image src={image} alt={title} className="object-cover" fill />
         </div>
         <div className="flex flex-col">
           <h2>{title}</h2>
