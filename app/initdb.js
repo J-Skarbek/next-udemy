@@ -74,7 +74,7 @@ const dummyMeals = [
   {
     title: 'Classic Mac n Cheese',
     slug: 'classic-mac-n-cheese',
-    image: '/images/macncheese.jpg',
+    image: '/images/macaroni.jpg',
     summary:
       "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
     instructions: `
