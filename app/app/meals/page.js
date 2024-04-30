@@ -10,7 +10,7 @@ export default async function Meals() {
   return (
     <>
       <header>
-      <div className="flex flex-col">
+        <div className="flex flex-col">
           <div className="hero flex flex-col justify-center align-center items-center gap-4 p-8">
             <h1 className="text-5xl font-bold">Delicious Meals Created <span className="underline">By You</span></h1>
             <div className="px-16">
@@ -23,9 +23,9 @@ export default async function Meals() {
           </div>
         </div>   
       </header>
-      <main>
+      <main classname="px-16 py-8">
         <MealsGrid meals={meals} />
-    </main>
+      </main>
     </>
   )
 }
