@@ -1,7 +1,11 @@
 import MealsGrid from "@/components/meals/mealsGrid"
 import Link from "next/link"
 
-export default function Meals() {
+import { getMeals } from "@/db/meals";
+
+export default async function Meals() {
+
+  const meals = await getMeals();
 
   return (
     <>
@@ -20,7 +24,7 @@ export default function Meals() {
         </div>   
       </header>
       <main>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={meals} />
     </main>
     </>
   )

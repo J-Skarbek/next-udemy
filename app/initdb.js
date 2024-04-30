@@ -191,9 +191,24 @@ async function initData() {
       )
    `);
 
+  // for (const meal of dummyMeals) {
+  //   console.log("Inserting meal with slug:", meal.slug);
+  //   stmt.run(meal);
+  // }
+  // for (const meal of dummyMeals) {
+  //   try {
+  //     stmt.run(meal);
+  //   } catch (error) {
+  //     console.error("Error inserting meal:", error.message);
+  //     console.error("Meal object:", meal);
+  //   }
+  // }
+
   for (const meal of dummyMeals) {
+    console.log("Inserting meal with slug:", meal.slug, "Length:", meal.slug.length); // Add this line for logging
     stmt.run(meal);
   }
+
 }
 
 initData();
