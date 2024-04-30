@@ -23,7 +23,7 @@ export default async function Meals() {
           </div>
         </div>   
       </header>
-      <main classname="px-16 py-8">
+      <main>
         <MealsGrid meals={meals} />
       </main>
     </>
