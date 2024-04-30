@@ -23,6 +23,5 @@ export default function Meals() {
         <MealsGrid meals={[]} />
     </main>
     </>
-    
   )
 }
