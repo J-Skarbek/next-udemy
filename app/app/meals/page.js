@@ -1,3 +1,4 @@
+import MealsGrid from "@/components/meals/mealsGrid"
 import Link from "next/link"
 
 export default function Meals() {
@@ -19,7 +20,7 @@ export default function Meals() {
         </div>   
       </header>
       <main>
-        <h1>This is the meals page</h1>
+        <MealsGrid meals={[]} />
     </main>
     </>
     
