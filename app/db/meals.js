@@ -10,5 +10,6 @@ export async function getMeals() {
 
   //Abritrary delay...
   await new Promise((resolve) => setTimeout(resolve, 2000));
+  // throw new Error('Loading meals failed.')
   return db.prepare('SELECT * FROM meals').all();
 }
