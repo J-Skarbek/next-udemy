@@ -1,23 +1,9 @@
 import ImagePicker from '@/components/meals/imagePicker';
+import submitMeal from '@/serverActions/submitMeal';
 import classes from './page.module.css';
 
 export default function ShareMealPage() {
-  async function submitMeal(formData) {
-    // Can declare a function to run only on server, but must add
-    // async keyword in addition to the directive below
-    'use server';
-    const meal = {
-      title: formData.get('title'),
-      summary: formData.get('summary'),
-      instructions: formData.get('instructions'),
-      image: formData.get('image'),
-      creator: formData.get('name'),
-      creator_email: formData.get('emal')
-    }
-
-    console.log(meal);
-  }
-
+  
   return (
     <>
       <header className={classes.header}>
