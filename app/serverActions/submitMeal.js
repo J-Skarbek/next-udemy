@@ -1,5 +1,8 @@
 'use server';
 
+import { postMeal } from "@/db/meals";
+import { redirect } from "next/navigation";
+
 export default async function submitMeal(formData) {
   // Can declare a function to run only on server, but must add
   // async keyword in addition to the directive below
@@ -9,7 +12,8 @@ export default async function submitMeal(formData) {
     instructions: formData.get('instructions'),
     image: formData.get('image'),
     creator: formData.get('name'),
-    creator_email: formData.get('emal')
+    creator_email: formData.get('email')
   }
-  console.log(meal);
+  await postMeal(meal);
+  redirect('/meals');
 }
