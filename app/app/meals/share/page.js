@@ -1,6 +1,7 @@
 'use client';
 
-import { useActionState } from "react";
+// import { useActionState } from "react";
+import { useFormState } from 'react-dom';
 import ImagePicker from '@/components/meals/imagePicker';
 import submitMeal from '@/serverActions/submitMeal';
 import classes from './page.module.css';
@@ -13,9 +14,13 @@ export default function ShareMealPage() {
   //initialize with: it can be null, or you can add an object with a shape
   //corresponding to the returned server action object, like below
   // https://react.dev/reference/react/useActionState
-  const [state, formAction] = useActionState(submitMeal, {message: null});
+  // const [state, formAction] = useActionState(submitMeal, {message: null});
   //Arugably, this hook could be put into its own component making use of
   //'use client' directive and imported for better seperation of concerns
+
+  //All the notes above apply to this hook too, for some reason this one
+  //will work but useServerAction() will not right now (5/3/24)
+  const [state, formAction] = useFormState(submitMeal, {message: null});
   
   return (
     <>
