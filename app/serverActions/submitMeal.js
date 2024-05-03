@@ -27,7 +27,7 @@ export default async function submitMeal(prevState, formData) {
     isInvalidText(meal.summary) || 
     isInvalidText(meal.instructions) || 
     isInvalidText(meal.creator) || 
-    isInvalidText(meal.creator_email) || meal.creator_email.includes('@') || 
+    isInvalidText(meal.creator_email) || !meal.creator_email.includes('@') || 
     !meal.image || meal.image.size === 0
   ) {
     // throw new Error('Invalid Input!');
