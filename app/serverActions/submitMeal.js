@@ -7,7 +7,10 @@ function isInvalidText(text) {
   return !text || text.trim() === '';
 }
 
-export default async function submitMeal(formData) {
+//Note: this function now accepts two arguments because the useActionState()
+//hook will by default pass in two arguments, 
+//the previous state value and the form data
+export default async function submitMeal(prevState, formData) {
   // Can declare a function to run only on server, but must add
   // async keyword in addition to the directive below
   const meal = {
@@ -27,8 +30,14 @@ export default async function submitMeal(formData) {
     isInvalidText(meal.creator_email) || meal.creator_email.includes('@') || 
     !meal.image || meal.image.size === 0
   ) {
-    throw new Error('Invalid Input!')
-
+    // throw new Error('Invalid Input!');
+    
+    //server actions can return response objects as well. -- These types
+    //of objects cannot have methods in them -- must be simple 
+    //values, nested objects, nested arrays, etc.
+    return {
+      message: 'Invalid Input.'
+    }
   }
 
   await postMeal(meal);

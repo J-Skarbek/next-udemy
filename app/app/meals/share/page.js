@@ -1,9 +1,21 @@
+'use client';
+
+import { useActionState } from "react";
 import ImagePicker from '@/components/meals/imagePicker';
 import submitMeal from '@/serverActions/submitMeal';
 import classes from './page.module.css';
 import MealsFormSubmit from '@/components/meals/mealsFormSubmit';
 
 export default function ShareMealPage() {
+  //This hook mamages the state of the componet it's placed in
+  //and works with submitting forms. 1st argument is the server action
+  //function we need to reference, 2nd argument is the 'state' we want to
+  //initialize with: it can be null, or you can add an object with a shape
+  //corresponding to the returned server action object, like below
+  // https://react.dev/reference/react/useActionState
+  const [state, formAction] = useActionState(submitMeal, {message: null});
+  //Arugably, this hook could be put into its own component making use of
+  //'use client' directive and imported for better seperation of concerns
   
   return (
     <>
@@ -14,7 +26,8 @@ export default function ShareMealPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={classes.main}>
-        <form className={classes.form} action={submitMeal}>
+        {/* with useActionState, you set the 'formAction' value to the action in the form element */}
+        <form className={classes.form} action={formAction}>
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your name</label>
@@ -43,6 +56,7 @@ export default function ShareMealPage() {
             ></textarea>
           </p>
           <ImagePicker label='Your Image' name='image'/>
+          {state.message && <p>{state.message}</p>}
           <p className={classes.actions}>
             <MealsFormSubmit />
           </p>

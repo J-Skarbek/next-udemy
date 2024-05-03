@@ -11,8 +11,8 @@
   "dependencies": {
     "better-sqlite3": "^9.6.0",
     "next": "14.2.3",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^19.0.0-beta-1beb73de0f-20240503",
+    "react-dom": "^19.0.0-beta-1beb73de0f-20240503",
     "slugify": "^1.6.6",
     "xss": "^1.0.15"
   },
