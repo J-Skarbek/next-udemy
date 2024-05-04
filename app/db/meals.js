@@ -1,8 +1,13 @@
-import fs from 'node:fs';
-
+// import fs from 'node:fs';
+//Hide the fs stuff from above
+import { S3 } from '@aws-sdk/client-s3';
 import sql from 'better-sqlite3';
 import slugify from 'slugify';
 import xss from 'xss';
+
+const s3 = new S3({
+  region: 'us-east-2'
+});
 
 const db = sql('meals.db');
 
@@ -28,13 +33,22 @@ export async function postMeal(meal) {
 
   const extension = meal.image.name.split('.').pop();
   const fileName = `${meal.slug}-${Math.floor(Math.random() * 100000)}.${extension}`;
-  const stream = fs.createWriteStream(`public/images/${fileName}`);
+  // const stream = fs.createWriteStream(`public/images/${fileName}`); //Don't need this anymore
   const bufferedImage = await meal.image.arrayBuffer();
-  stream.write(Buffer.from(bufferedImage), error => {
-    if (error) {
-      throw new Error('Saving image failed.')
-    }
+
+  s3.putObject({
+    Bucket: 'jskarbek--nextjs-demo-users-image',
+    Key: fileName,
+    Body: Buffer.from(bufferedImage),
+    ContentType: meal.image.type,
   });
+
+  //Can remove this below since we're now writing to s3
+  // stream.write(Buffer.from(bufferedImage), error => {
+  //   if (error) {
+  //     throw new Error('Saving image failed.')
+  //   }
+  // });
 
   meal.image = `/images/${fileName}`;
 
