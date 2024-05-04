@@ -6,7 +6,7 @@ export default function MealItem({ title, slug, image, summary, creator }) {
     <article className="flex flex-col">
       <header>
         <div className="meal-coverImg relative w-100 h-52">
-          <Image src={image} alt={title} className="object-cover" fill />
+          <Image src={`https://jskarbek--nextjs-demo-users-image.s3.us-east-2.amazonaws.com/${image}`} alt={title} className="object-cover" fill />
         </div>
         <div className="flex flex-col">
           <h2>{title}</h2>
