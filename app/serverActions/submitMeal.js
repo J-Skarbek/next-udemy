@@ -1,6 +1,7 @@
 'use server';
 
 import { postMeal } from "@/db/meals";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 function isInvalidText(text) {
@@ -41,5 +42,12 @@ export default async function submitMeal(prevState, formData) {
   }
 
   await postMeal(meal);
+  revalidatePath('/meals', 'layout'); 
+  //This method tells next.js to revalidate any cahce that belongs to a 
+  //certain routepath -- but it only revalidates the path it is given, and if something
+  //like nested paths also need revalidation, you need to call the method again
+  //But you can also add a 2nd argument to the parameters, 'layout' which will change the method's
+  //default revalidation of the 'page' component to the 'layout' component, which will
+  //in fact wrap the main componenet in the route folder plus any nested components
   redirect('/meals');
 }
