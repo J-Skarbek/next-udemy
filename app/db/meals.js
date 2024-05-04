@@ -50,7 +50,9 @@ export async function postMeal(meal) {
   //   }
   // });
 
-  meal.image = `/images/${fileName}`;
+  // meal.image = `/images/${fileName}`;
+  // Adjusting this line to use s3 stuff
+  meal.image = fileName;
 
   db.prepare(`
     INSERT INTO meals
