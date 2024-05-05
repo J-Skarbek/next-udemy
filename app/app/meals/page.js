@@ -4,6 +4,11 @@ import { getMeals } from "@/db/meals";
 import { Suspense } from "react";
 import classes from './loading.module.css';
 
+export const metadata = {
+  title: "All Meals",
+  description: "Browse the delicious meals shared by our vibrant community",
+};
+
 async function MealsFetcher() {
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;
